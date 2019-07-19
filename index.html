@@ -36,27 +36,27 @@
 var entityEl = document.createElement('a-entity');
 
 entityEl.setAttribute('geometry', {
-primitive: 'box',
+primitive: box,
 height: 1,
 width: 1
 });
 
 
 entityEl.setAttribute('material', {
-opacity: '0.3',
-side: 'double',
-color: 'blue'
+opacity: 0.3,
+side: double,
+color: blue
 });
 
-entityEl.setAttribute('scale', '1');
+entityEl.setAttribute('scale', 1);
 
 
 var knotEl = document.createElement('a-torus-knot');
 
-knotEl.setAttribute('radius', '0.26');
-knotEl.setAttribute('radius-tubular', '0.05');
+knotEl.setAttribute('radius', 0.26);
+knotEl.setAttribute('radius-tubular', 0.05);
 knotEl.setAttribute('animation', {
-property: 'rotation',
+property: rotation,
 to: '360 0 0',
 dur: '5000',
 easing: 'linear',
