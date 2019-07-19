@@ -6,7 +6,7 @@
     <a-scene id="scene" embedded arjs='sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
 
 
-        <a-marker id="hiro" preset='hiro'>
+        <a-marker id="hiro" markerhandler emitevents="true" cursor="rayOrigin: mouse" preset='hiro'>
     </a-marker> 
     <a-marker type='barcode' value='5'>
       <a-box position='0 0.5 0' material='opacity: 0.5; side: double;color:pink;'>
@@ -48,6 +48,9 @@ side: 'double',
 color: 'blue'
 });
 
+entityEl.setAttribute('scale', '1');
+
+
 var knotEl = document.createElement('a-torus-knot');
 
 knotEl.setAttribute('radius', '0.26');
@@ -64,15 +67,19 @@ loop: 'true'
 markerEl.appendChild(entityEl);
 entityEl.appendChild(knotEl);
 
-entityEl.addEventListener('click', (e) => {
-  e.preventDefault();
-  entityEl.setAttribute('material', {
-opacity: '0.6',
-side: 'double',
-color: 'pink'
-});
-});
+AFRAME.registerComponent('markerhandler', {
+init: function() {
+    const animatedMarker = document.querySelector("#hiro");
+    const aEntity = this.entityEl;
 
+    // every click, we make our model grow in size :)
+    animatedMarker.addEventListener('click', function(ev, target){
+            const scale = aEntity.getAttribute('scale');
+            Object.keys(scale).forEach((key) => scale[key] = scale[key] + 1);
+            aEntity.setAttribute('scale', scale);
+      
+    });
+}});
   </script>
 </body>
 </html>
