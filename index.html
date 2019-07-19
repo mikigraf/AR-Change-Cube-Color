@@ -64,7 +64,7 @@ loop: 'true'
 markerEl.appendChild(entityEl);
 entityEl.appendChild(knotEl);
 
-entityEl.addEventListener('click', (e) => {
+entityEl.addEventListener('touchstart', (e) => {
   e.preventDefault();
   entityEl.setAttribute('material', {
 opacity: '0.6',
