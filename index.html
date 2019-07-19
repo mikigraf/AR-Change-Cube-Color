@@ -73,6 +73,7 @@ init: function() {
     const aEntity = this.entityEl;
 
     animatedMarker.addEventListener('click', function(ev, target){
+      entityEl.getAttribute('material');
       entityEl.setAttribute('material', {
 opacity: '0.3',
 side: 'double',
