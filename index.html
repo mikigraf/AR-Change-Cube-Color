@@ -25,9 +25,9 @@
     </a-scene>
 
     <script>
-     var markerEl = document.querySelector('#hiro');
+     const markerEl = document.querySelector('#hiro');
 
-var entityEl = document.createElement('a-entity');
+const entityEl = document.createElement('a-box');
 
 entityEl.setAttribute('geometry', {
   primitive: 'box',
@@ -39,10 +39,10 @@ entityEl.setAttribute('geometry', {
 entityEl.setAttribute('material', {
   opacity: '0.3',
   side: 'double',
-  color: 'dark'
+  color: 'green'
 });
 
-var knotEl = document.createElement('a-torus-knot');
+const knotEl = document.createElement('a-torus-knot');
 
 knotEl.setAttribute('radius', '0.26');
 knotEl.setAttribute('radius-tubular', '0.05');
@@ -57,6 +57,15 @@ knotEl.setAttribute('animation', {
 
 markerEl.appendChild(entityEl);
 entityEl.appendChild(knotEl);
+
+entityEl.addEventListener('click', () => {
+  entityEl.setAttribute('material', {
+  opacity: '0.5',
+  side: 'double',
+  color: 'blue'
+ });
+});
+ 
 
     </script>
   </body>
