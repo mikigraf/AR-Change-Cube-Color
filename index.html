@@ -76,6 +76,7 @@ init: function() {
     animatedMarker.addEventListener('click', function(ev, target){
             const scale = aEntity.getAttribute('scale');
             Object.keys(scale).forEach((key) => scale[key] = scale[key] + 1);
+            aEntity.setAttribute('material','color','red');
             aEntity.setAttribute('scale', scale);
       
     });
