@@ -12,7 +12,8 @@
     "webpack-dev-server": "^3.1.5"
   },
   "scripts": {
-    "start": "webpack && webpack-dev-server --mode development",
+    // "start": "webpack && webpack-dev-server --mode development",
+    "start": "node src/app.js",
     "build": "webpack"
   }
 }
