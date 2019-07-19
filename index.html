@@ -67,12 +67,12 @@ loop: 'true'
 markerEl.appendChild(entityEl);
 entityEl.appendChild(knotEl);
 
+
 AFRAME.registerComponent('markerhandler', {
 init: function() {
     const animatedMarker = document.querySelector("#hiro");
     const aEntity = this.entityEl;
 
-    // every click, we make our model grow in size :)
     animatedMarker.addEventListener('click', function(ev, target){
             const scale = aEntity.getAttribute('scale');
             Object.keys(scale).forEach((key) => scale[key] = scale[key] + 1);
