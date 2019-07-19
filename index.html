@@ -25,13 +25,17 @@
     </a-scene>
 
     <script>
+
+    var height = 2;
+    var width = 2;
+
      var markerEl = document.querySelector('#hiro');
      var entityEl = document.createElement('a-entity');
 
     entityEl.setAttribute('geometry', {
       primitive: 'box',
-      height: 5,
-      width: 5
+      height,
+      width
     });
 
 
