@@ -49,10 +49,10 @@ entityEl.addEventListener('click', function(ev, target){
      console.log('Clicked');
      
      const color = entityEl.getAttribute('material');
-     if(color.color.localeCompare('red') === 0){
-      entityEl.setAttribute('material','color', 'blue'); 
-     }else {
+     if(color.color.localeCompare('blue') === 0){
       entityEl.setAttribute('material','color', 'red'); 
+     }else {
+      entityEl.setAttribute('material','color', 'blue'); 
      }
     });
 
