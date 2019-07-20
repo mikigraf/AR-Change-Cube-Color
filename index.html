@@ -36,15 +36,20 @@
 
 var entityEl = document.createElement('a-entity');
 
-/*markerEl.addEventListener('click', function (evt) {
-  console.log('This hiro element was clicked!');
-  entityEl.setAttribute('material', {
-opacity: '0.3',
-side: 'double',
-color: 'red'
-})
-});
-*/
+// markerEl.addEventListener('click', function (evt) {
+//   console.log('This hiro element was clicked!');
+//   entityEl.setAttribute('material', {
+// opacity: '0.3',
+// side: 'double',
+// color: 'red'
+// })
+// });
+
+entityEl.addEventListener('click', function(ev, target){
+     console.log('Clicked');
+     entityEl.setAttribute('material','color', 'red');  
+    });
+
 
 entityEl.setAttribute('geometry', {
 primitive: 'box',
@@ -81,16 +86,16 @@ markerEl.appendChild(entityEl);
 entityEl.appendChild(knotEl);
 
 
-AFRAME.registerComponent('cursor-listener', {
-init: function() {
-     const scene = document.querySelector('#scene');
+// AFRAME.registerComponent('cursor-listener', {
+// init: function() {
+//      const scene = document.querySelector('#scene');
      
-     entityEl.addEventListener('click', function(ev, target){
-     console.log('Clicked');
-     entityEl.setAttribute('material','color', 'red');  
-    });
-    // entityEl.emit('click');
-}});
+//      entityEl.addEventListener('click', function(ev, target){
+//      console.log('Clicked');
+//      entityEl.setAttribute('material','color', 'red');  
+//     });
+//     // entityEl.emit('click');
+// }});
   </script>
 </body>
 </html>
