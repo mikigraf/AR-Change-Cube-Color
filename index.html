@@ -4,7 +4,7 @@
 
 
 <body style='margin : 0px; overflow: hidden;'>
-    <a-scene id="scene" embedded arjs='sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3;' cursor-listener>
+    <a-scene id="scene" embedded arjs='sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
 
 
         <a-marker id="hiro" preset='hiro'  >
@@ -47,7 +47,13 @@ var entityEl = document.createElement('a-entity');
 
 entityEl.addEventListener('click', function(ev, target){
      console.log('Clicked');
-     entityEl.setAttribute('material','color', 'red');  
+     
+     const color = entityEl.getAttribute('material');
+     if(color.color.localeCompare('red') === 0){
+      entityEl.setAttribute('material','color', 'blue'); 
+     }else {
+      entityEl.setAttribute('material','color', 'red'); 
+     }
     });
 
 
