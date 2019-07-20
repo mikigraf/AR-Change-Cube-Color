@@ -36,6 +36,10 @@
 
 var entityEl = document.createElement('a-entity');
 
+markerEl.addEventListener('click', function (evt) {
+  console.log('This hiro element was clicked!');
+});
+
 entityEl.setAttribute('geometry', {
 primitive: 'box',
 height: '1',
@@ -74,6 +78,7 @@ init: function() {
      this.entityEl.setAttribute('color', 'blue');  
     });
     this.entityEl.emit('foo');
+
 }});
   </script>
 </body>
