@@ -75,7 +75,7 @@ AFRAME.registerComponent('cursor-listener', {
 init: function() {
      const scene = document.querySelector('#scene');
      this.entityEl.addEventListener('click', function(ev, target){
-     this.entityEl.setAttribute('color', 'blue');  
+     this.entityEl.setAttribute('color', 'red');  
     });
     this.entityEl.emit('foo');
 
