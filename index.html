@@ -69,14 +69,11 @@ entityEl.appendChild(knotEl);
 
 AFRAME.registerComponent('cursor-listener', {
 init: function() {
-    this.el.addEventListener('click', function(ev, target){
-      this.el.getAttribute('material');
-      this.el.setAttribute('material', {
-opacity: '0.3',
-side: 'double',
-color: 'pink'
-});  
+     const scene = document.querySelector('#scene');
+     this.entityEl.addEventListener('click', function(ev, target){
+     this.entityEl.setAttribute('color', 'blue');  
     });
+    this.entityEl.emit('foo');
 }});
   </script>
 </body>
