@@ -16,7 +16,7 @@
         </a-torus-knot>
       </a-box>
     </a-marker>
-    <a-marker preset='kanji' cursor="rayOrigin: mouse" emitevents="true">
+    <a-marker preset='kanji' cursor="rayOrigin: mouse" >
       <a-box position='0 0.5 0' material='opacity: 0.5; side: double;color:green;'>
         <a-torus-knot radius='0.26' radius-tubular='0.05'
         animation="property: rotation; to:360 0 0; dur: 5000; easing: linear; loop: true">
@@ -45,15 +45,24 @@ var entityEl = document.createElement('a-entity');
 // })
 // });
 
+let hiroboxclickCount = 0;
 entityEl.addEventListener('click', function(ev, target){
+
      console.log('Clicked');
-     
-     const color = entityEl.getAttribute('material');
-     if(color.color.localeCompare('blue') === 0){
-      entityEl.setAttribute('material','color', 'red'); 
-     }else {
-      entityEl.setAttribute('material','color', 'blue'); 
-     }
+     console.log(ev);
+     console.log(ev.srcElement.id.localeCompare('hiro-box') === 0)
+     if(ev.srcElement.id.localeCompare('hiro-box') === 0){
+       if(hiroboxclickCount !== 0){
+        const color = entityEl.getAttribute('material');
+          if(color.color.localeCompare('blue') === 0){
+            entityEl.setAttribute('material','color', 'red'); 
+          }else {
+            entityEl.setAttribute('material','color', 'blue'); 
+          }
+       }
+       hiroboxclickCount += 1;
+          
+      }
     });
 
 
@@ -72,7 +81,9 @@ color: 'blue'
 
 entityEl.setAttribute('cursor', {
   rayOrigin: "mouse"  
-})
+});
+
+entityEl.setAttribute('id', 'hiro-box')
 
 
 var knotEl = document.createElement('a-torus-knot');
@@ -99,6 +110,29 @@ entityEl.appendChild(knotEl);
 //      entityEl.addEventListener('click', function(ev, target){
 //      console.log('Clicked');
 //      entityEl.setAttribute('material','color', 'red');  
+//     });
+//     // entityEl.emit('click');
+// }});
+
+// AFRAME.registerComponent('cursor-listener', {
+// init: function() {
+//      const scene = document.querySelector('#scene');
+     
+//      entityEl.addEventListener('click', function(ev, target){
+//      console.log('Clicked');
+     
+//      const intersectedElement = ev && ev.detail && ev.detail.intersectedEl;
+//      console.log('2');
+//         if (entityEl && intersectedElement === entityEl) {
+//           console.log('3');
+//           const color = entityEl.getAttribute('material');
+//           if(color.color.localeCompare('blue') === 0){
+//             entityEl.setAttribute('material','color', 'red'); 
+//           }else {
+//             entityEl.setAttribute('material','color', 'blue'); 
+//           }
+//         }
+     
 //     });
 //     // entityEl.emit('click');
 // }});
