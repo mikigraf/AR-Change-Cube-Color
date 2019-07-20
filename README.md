@@ -9,4 +9,4 @@ Scan this QR code with default camera app of your phone
 
 ![Marker](HIRO.jpg)
 
-#. 3. Click on the cube to change its color :)!
+# 3. Click on the cube to change its color :)!
