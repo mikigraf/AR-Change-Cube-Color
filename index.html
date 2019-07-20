@@ -4,7 +4,7 @@
 
 
 <body style='margin : 0px; overflow: hidden;'>
-    <a-scene id="scene" embedded arjs='sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
+    <a-scene id="scene" embedded arjs='sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3;' cursor-listener>
 
 
         <a-marker id="hiro" preset='hiro'>
@@ -36,7 +36,7 @@
 
 var entityEl = document.createElement('a-entity');
 
-markerEl.addEventListener('click', function (evt) {
+/*markerEl.addEventListener('click', function (evt) {
   console.log('This hiro element was clicked!');
   entityEl.setAttribute('material', {
 opacity: '0.3',
@@ -44,6 +44,7 @@ side: 'double',
 color: 'red'
 })
 });
+*/
 
 entityEl.setAttribute('geometry', {
 primitive: 'box',
@@ -75,19 +76,16 @@ loop: 'true'
 markerEl.appendChild(entityEl);
 entityEl.appendChild(knotEl);
 
-<<<<<<< HEAD
-=======
 
 AFRAME.registerComponent('cursor-listener', {
 init: function() {
      const scene = document.querySelector('#scene');
-     this.entityEl.addEventListener('click', function(ev, target){
-    //  this.entityEl.setAttribute('color', 'red');  
+     entityEl.addEventListener('click', function(ev, target){
+     console.log('Clicked');
+     entityEl.setAttribute('color', 'red');  
     });
-    // this.entityEl.emit('click');
-
+    entityEl.emit('click');
 }});
->>>>>>> d81722e514e38044d66a7d5b07cd6f921bcd187a
   </script>
 </body>
 </html>
