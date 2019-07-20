@@ -75,6 +75,19 @@ loop: 'true'
 markerEl.appendChild(entityEl);
 entityEl.appendChild(knotEl);
 
+<<<<<<< HEAD
+=======
+
+AFRAME.registerComponent('cursor-listener', {
+init: function() {
+     const scene = document.querySelector('#scene');
+     this.entityEl.addEventListener('click', function(ev, target){
+    //  this.entityEl.setAttribute('color', 'red');  
+    });
+    // this.entityEl.emit('click');
+
+}});
+>>>>>>> d81722e514e38044d66a7d5b07cd6f921bcd187a
   </script>
 </body>
 </html>
